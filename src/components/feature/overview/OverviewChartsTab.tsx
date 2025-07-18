@@ -1,0 +1,53 @@
+import { PieChart, BarChart3, GitBranch, LineChart } from "lucide-react";
+import { useSearchParams } from "react-router-dom";
+const chartItems = [
+  {
+    label: "Distribution",
+    icon: <PieChart className="w-6 h-8 text-primary " />,
+    key: "pie",
+  },
+  {
+    label: "Comparison",
+    icon: <BarChart3 className="w-6 h-8 text-sky" />,
+    key: "bar",
+  },
+  {
+    label: "Structure",
+    icon: <GitBranch className="w-6 h-8 text-green" />,
+    key: "treemap",
+  },
+  {
+    label: "Trends",
+    icon: <LineChart className="w-6 h-8 text-red" />,
+    key: "line",
+  },
+];
+
+const OverviewChartsTab = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const chartType = searchParams.get("chartType") || "pie";
+  const handleClick = (key: string) => {
+    if (chartType !== key) {
+      searchParams.set("chartType", key);
+      setSearchParams(searchParams);
+    }
+  };
+  return (
+    <div className="tabs tabs-box rounded-xl p-1.5 bg-black/30 border border-white/10">
+      {chartItems.map((item) => (
+        <div
+          onClick={() => handleClick(item.key)}
+          key={item.key}
+          className={`tab flex items-center gap-3 duration-300 ease-in-out delay-75 ${
+            chartType === item.key && "bg-primary-20 !rounded-xl !text-white"
+          }`}
+        >
+          <span className="font-semibold">{item.label}</span>
+          {item.icon}
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default OverviewChartsTab;

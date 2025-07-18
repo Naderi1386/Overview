@@ -1,7 +1,7 @@
-import { assets } from "../../../constants/assetsData";
+import type { AssetType } from "../../../types/assetType";
 import OverviewCard from "./OverviewCard";
 
-const OverviewCards = () => {
+const OverviewCards = ({assets}:{assets:AssetType[]}) => {
   const totalAssets = String(assets.length);
   const uniqueDomains = String(
     new Set(assets.map((asset) => asset.domain)).size
@@ -17,7 +17,7 @@ const OverviewCards = () => {
   );
 
   return (
-    <div className="flex items-center justify-around bg-black border border-white/10 rounded-xl p-1">
+    <div className="flex items-center justify-around bg-black/30 border border-white/10 rounded-xl p-1">
       <OverviewCard label="Total Assets" value={totalAssets} />
       <OverviewCard label="Unique Domains" value={uniqueDomains} />
       <OverviewCard label="Ports" value={ports} />

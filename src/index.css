@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer utilities {
   .bg-onyx {
     background-color: #0a0a0a;
@@ -14,7 +13,9 @@
   .bg-primary {
     background-color: oklch(58% 0.233 277.117);
   }
-
+  .bg-primary-20 {
+    background-color: oklch(58% 0.233 277 / 0.2);
+  }
   .bg-sky {
     background-color: oklch(74% 0.16 232.661);
   }
@@ -26,7 +27,7 @@
   .bg-red {
     background-color: oklch(71% 0.194 13.428);
   }
- .bg-white {
+  .bg-white {
     background-color: #fff;
   }
   .text-black {
@@ -48,5 +49,4 @@
   .text-red {
     color: oklch(71% 0.194 13.428);
   }
- 
 }
