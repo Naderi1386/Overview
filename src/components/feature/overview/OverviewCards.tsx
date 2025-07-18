@@ -3,13 +3,26 @@ import OverviewCard from "./OverviewCard";
 
 const OverviewCards = () => {
   const totalAssets = String(assets.length);
+  const uniqueDomains = String(
+    new Set(assets.map((asset) => asset.domain)).size
+  );
+  const ports = String(
+    assets
+      .map((asset) => (asset.ports ? asset.ports : 0))
+      .reduce((accumulator, currentValue) => accumulator + currentValue, 0)
+  );
+  const assetsWithCNAME = String(assets.filter((asset) => asset.cname).length);
+  const assetsWithIP = String(
+    assets.filter((asset) => asset.ipAddresses?.length).length
+  );
+
   return (
-    <div className="flex items-center justify-between border-t border-white/10 pt-3">
+    <div className="flex items-center justify-around bg-black border border-white/10 rounded-xl p-1">
       <OverviewCard label="Total Assets" value={totalAssets} />
-      <OverviewCard label="Unique Domains" value="50" />
-      <OverviewCard label="Open Ports" value="50" />
-      <OverviewCard label="Assets with CNAME" value="50" />
-      <OverviewCard label="Average Update Age" value="50" />
+      <OverviewCard label="Unique Domains" value={uniqueDomains} />
+      <OverviewCard label="Ports" value={ports} />
+      <OverviewCard label="Assets with CNAME" value={assetsWithCNAME} />
+      <OverviewCard label="Assets Without IP" value={assetsWithIP} />
     </div>
   );
 };
