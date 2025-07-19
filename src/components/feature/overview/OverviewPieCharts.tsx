@@ -26,34 +26,40 @@ const OverviewPieCharts = ({ assets }: { assets: AssetType[] }) => {
     { name: "Updated", value: assetsWithUpdateDate },
     { name: "No Update", value: assets.length - assetsWithUpdateDate },
   ];
+  const chartItems = [
+    {
+      title: "IP Coverage of Assets",
+      colors: [PIE_CHART_COLORS.red, PIE_CHART_COLORS.green],
+      chartData: chartIPData,
+    },
+    {
+      title: "Response Status Breakdown",
+      colors: [
+        PIE_CHART_COLORS.green,
+        PIE_CHART_COLORS.yellow,
+        PIE_CHART_COLORS.purple,
+        PIE_CHART_COLORS.lightBlue,
+        PIE_CHART_COLORS.red,
+      ],
+      chartData: chartStatusData,
+    },
+    {
+      title: "Asset Update Coverage",
+      colors: [PIE_CHART_COLORS.green, PIE_CHART_COLORS.red],
+      chartData: chartUpdateDateData,
+    },
+  ];
 
   return (
-    <div
-      className="w-full bg-white/5 rounded-xl py-5 shadow-md border-2 border-white/10 flex flex-wrap justify-around gap-x-4"
-      tabIndex={-1}
-      style={{ outline: "none" }}
-    >
-      <CustomPieChart
-        title="IP Coverage of Assets"
-        colors={[PIE_CHART_COLORS.red, PIE_CHART_COLORS.green]}
-        chartData={chartIPData}
-      />
-      <CustomPieChart
-        chartData={chartStatusData}
-        title="Response Status Breakdown"
-        colors={[
-          PIE_CHART_COLORS.green,
-          PIE_CHART_COLORS.yellow,
-          PIE_CHART_COLORS.purple,
-          PIE_CHART_COLORS.lightBlue,
-          PIE_CHART_COLORS.red,
-        ]}
-      />
-      <CustomPieChart
-        chartData={chartUpdateDateData}
-        title="Asset Update Coverage"
-        colors={[PIE_CHART_COLORS.green, PIE_CHART_COLORS.red]}
-      />
+    <div className="bg-white/5 rounded-xl py-5 shadow-md border-2 border-white/10 flex flex-wrap justify-around gap-x-4">
+      {chartItems.map((item, index) => (
+        <CustomPieChart
+          key={index}
+          title={item.title}
+          chartData={item.chartData}
+          colors={item.colors}
+        />
+      ))}
     </div>
   );
 };
