@@ -1,0 +1,1 @@
+export type ChartsType="pie" | "bar" | "treemap" | "line"

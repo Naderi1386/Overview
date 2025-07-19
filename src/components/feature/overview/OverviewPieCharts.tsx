@@ -1,8 +1,8 @@
 import { PIE_CHART_COLORS } from "../../../constants/PieChartColors";
 import type { AssetType } from "../../../types/assetType";
-import CustomPieChart from "./CustomPieChart";
+import CustomPieChart from "../charts/CustomPieChart";
 
-const PieCharts = ({ assets }: { assets: AssetType[] }) => {
+const OverviewPieCharts = ({ assets }: { assets: AssetType[] }) => {
   const assetsWithIP = assets.filter(
     (asset) => asset.ipAddresses && asset.ipAddresses.length > 0
   ).length;
@@ -57,5 +57,4 @@ const PieCharts = ({ assets }: { assets: AssetType[] }) => {
     </div>
   );
 };
-
-export default PieCharts;
+export default OverviewPieCharts;

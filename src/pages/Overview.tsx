@@ -1,10 +1,24 @@
 import OverviewCards from "../components/feature/overview/OverviewCards";
 import OverviewChartsTab from "../components/feature/overview/OverviewChartsTab";
 import OverviewHeader from "../components/feature/overview/OverviewHeader";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { assets } from "../constants/assetsData";
-import PieCharts from "../components/feature/overview/PieCharts";
+import OverviewPieCharts from "../components/feature/overview/OverviewPieCharts";
+import OverviewBarChart from "../components/feature/overview/OverviewBarChart";
+import OverviewTreeMap from "../components/feature/overview/OverviewTreeMap";
+import OverviewLineChart from "../components/feature/overview/OverviewLineChart";
+import { useSearchParams } from "react-router-dom";
+import type { ChartsType } from "../types/ChartsType";
+import type { JSX } from "react";
 const Overview = () => {
+  const [searchParams] = useSearchParams();
+  const chartType = searchParams.get("chartType") as ChartsType;
+  const chartsSections: Record<ChartsType, JSX.Element> = {
+    pie: <OverviewPieCharts assets={assets} />,
+    bar: <OverviewBarChart />,
+    treemap: <OverviewTreeMap />,
+    line: <OverviewLineChart />,
+  };
   return (
     <section className="px-20 pb-32 pt-10">
       <motion.div
@@ -20,7 +34,17 @@ const Overview = () => {
           <OverviewCards assets={assets} />
         </div>
         <div className="mt-16 px-12">
-          <PieCharts assets={assets} />
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={chartType}
+              transition={{ type: "spring", stiffness: 300, damping: 50 }}
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+            >
+              {chartsSections[chartType] ?? chartsSections.pie}
+            </motion.div>
+          </AnimatePresence>
         </div>
       </motion.div>
     </section>
