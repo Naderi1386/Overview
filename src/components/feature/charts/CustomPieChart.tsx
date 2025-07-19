@@ -5,7 +5,7 @@ import {
   Cell,
   ResponsiveContainer,
 } from "recharts";
-import { PIE_CHART_COLORS } from "../../../constants/PieChartColors";
+import { CHART_COLORS } from "../../../constants/chartColors";
 const CustomPieChart = ({
   chartData,
   colors,
@@ -17,7 +17,7 @@ const CustomPieChart = ({
 }) => {
   return (
     <div className="w-[30%] h-64 flex flex-col items-center justify-center">
-      <h3 className="text-lg font-semibold text-white/60 mb-2.5 text-center">
+      <h3 className="text-white text-base font-semibold mb-2.5 text-center">
         {title}
       </h3>
       <ResponsiveContainer width="100%" height="100%">
@@ -45,9 +45,9 @@ const CustomPieChart = ({
           </Pie>
           <Tooltip
             contentStyle={{
-              backgroundColor: PIE_CHART_COLORS.darkBlue,
+              backgroundColor: CHART_COLORS.darkBlue,
               borderColor: "white",
-              borderRadius: "6px",
+              borderRadius: "2px",
             }}
             labelStyle={{ color: "white" }}
             itemStyle={{

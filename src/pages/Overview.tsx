@@ -4,18 +4,19 @@ import OverviewHeader from "../components/feature/overview/OverviewHeader";
 import { AnimatePresence, motion } from "framer-motion";
 import { assets } from "../constants/assetsData";
 import OverviewPieCharts from "../components/feature/overview/OverviewPieCharts";
-import OverviewBarChart from "../components/feature/overview/OverviewBarChart";
 import OverviewTreeMap from "../components/feature/overview/OverviewTreeMap";
 import OverviewLineChart from "../components/feature/overview/OverviewLineChart";
 import { useSearchParams } from "react-router-dom";
 import type { ChartsType } from "../types/ChartsType";
 import type { JSX } from "react";
+import OverviewBarCharts from "../components/feature/overview/OverviewBarCharts";
 const Overview = () => {
   const [searchParams] = useSearchParams();
   const chartType = searchParams.get("chartType") as ChartsType;
+  // I gave assets to the charts components as a prop to imagine that they are comming from an API
   const chartsSections: Record<ChartsType, JSX.Element> = {
     pie: <OverviewPieCharts assets={assets} />,
-    bar: <OverviewBarChart />,
+    bar: <OverviewBarCharts assets={assets} />,
     treemap: <OverviewTreeMap />,
     line: <OverviewLineChart />,
   };

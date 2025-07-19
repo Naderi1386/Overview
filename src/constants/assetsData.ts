@@ -46,6 +46,7 @@ export const assets: AssetType[] = [
     domain: "mrbug.ir movazee.com",
     createdDate: new Date("2025-04-12T03:24:00"),
     status: 200,
+    ipAddresses: ["185.143.234.120"],
   },
   {
     domain: "mrbug.ir",

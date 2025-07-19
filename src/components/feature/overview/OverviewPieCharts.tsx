@@ -1,5 +1,6 @@
-import { PIE_CHART_COLORS } from "../../../constants/PieChartColors";
+import { CHART_COLORS } from "../../../constants/chartColors";
 import type { AssetType } from "../../../types/assetType";
+import ChartWrraper from "../charts/ChartWrraper";
 import CustomPieChart from "../charts/CustomPieChart";
 
 const OverviewPieCharts = ({ assets }: { assets: AssetType[] }) => {
@@ -10,14 +11,14 @@ const OverviewPieCharts = ({ assets }: { assets: AssetType[] }) => {
     { name: "Without IP", value: assets.length - assetsWithIP },
     { name: "With IP", value: assetsWithIP },
   ];
-  const assetsBtStatus = (val: number) =>
+  const assetsByStatus = (val: number) =>
     assets.filter((asset) => asset.status && asset.status === val).length;
   const chartStatusData = [
-    { name: "200", value: assetsBtStatus(200) },
-    { name: "301", value: assetsBtStatus(301) },
-    { name: "401", value: assetsBtStatus(401) },
-    { name: "404", value: assetsBtStatus(404) },
-    { name: "500", value: assetsBtStatus(500) },
+    { name: "200", value: assetsByStatus(200) },
+    { name: "301", value: assetsByStatus(301) },
+    { name: "401", value: assetsByStatus(401) },
+    { name: "404", value: assetsByStatus(404) },
+    { name: "500", value: assetsByStatus(500) },
   ];
   const assetsWithUpdateDate = assets.filter(
     (asset) => asset.updateDate
@@ -29,29 +30,29 @@ const OverviewPieCharts = ({ assets }: { assets: AssetType[] }) => {
   const chartItems = [
     {
       title: "IP Coverage of Assets",
-      colors: [PIE_CHART_COLORS.red, PIE_CHART_COLORS.green],
+      colors: [CHART_COLORS.red, CHART_COLORS.green],
       chartData: chartIPData,
     },
     {
       title: "Response Status Breakdown",
       colors: [
-        PIE_CHART_COLORS.green,
-        PIE_CHART_COLORS.yellow,
-        PIE_CHART_COLORS.purple,
-        PIE_CHART_COLORS.lightBlue,
-        PIE_CHART_COLORS.red,
+        CHART_COLORS.green,
+        CHART_COLORS.yellow,
+        CHART_COLORS.purple,
+        CHART_COLORS.lightBlue,
+        CHART_COLORS.red,
       ],
       chartData: chartStatusData,
     },
     {
       title: "Asset Update Coverage",
-      colors: [PIE_CHART_COLORS.green, PIE_CHART_COLORS.red],
+      colors: [CHART_COLORS.green, CHART_COLORS.red],
       chartData: chartUpdateDateData,
     },
   ];
 
   return (
-    <div className="bg-white/5 rounded-xl py-5 shadow-md border-2 border-white/10 flex flex-wrap justify-around gap-x-4">
+    <ChartWrraper>
       {chartItems.map((item, index) => (
         <CustomPieChart
           key={index}
@@ -60,7 +61,7 @@ const OverviewPieCharts = ({ assets }: { assets: AssetType[] }) => {
           colors={item.colors}
         />
       ))}
-    </div>
+    </ChartWrraper>
   );
 };
 export default OverviewPieCharts;
