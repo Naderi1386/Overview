@@ -1,7 +1,7 @@
 import type { AssetType } from "../../../types/assetType";
 import OverviewCard from "./OverviewCard";
 
-const OverviewCards = ({assets}:{assets:AssetType[]}) => {
+const OverviewCards = ({ assets }: { assets: AssetType[] }) => {
   const totalAssets = String(assets.length);
   const uniqueDomains = String(
     new Set(assets.map((asset) => asset.domain)).size

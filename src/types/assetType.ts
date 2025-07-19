@@ -4,7 +4,7 @@ export type AssetType = {
   ipAddresses?: string[];
   status?: number;
   ports?: number;
-  updateDate: Date;
-  createdDate: Date;
+  updateDate?: Date;
+  createdDate?: Date;
   cname?: string;
 };

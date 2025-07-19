@@ -25,12 +25,14 @@ export const assets: AssetType[] = [
     updateDate: new Date("2025-04-10T03:24:00"),
     createdDate: new Date("2025-04-10T03:24:00"),
     cname: "mail.mrbug.ir",
+    status: 401,
   },
   {
     domain: "www.alrz.mrbug.ir:443",
     ports: 443,
     updateDate: new Date("2025-03-26T03:24:00"),
     createdDate: new Date("2025-03-26T03:24:00"),
+    status: 404,
   },
   {
     domain: "webdisk.mrbug.ir:443",
@@ -38,15 +40,21 @@ export const assets: AssetType[] = [
     updateDate: new Date("2025-04-12T03:24:00"),
     createdDate: new Date("2025-03-12T03:24:00"),
     cname: "disk.mrbug.ir",
+    status: 404,
   },
   {
     domain: "mrbug.ir movazee.com",
-    updateDate: new Date("2025-04-12T03:24:00"),
     createdDate: new Date("2025-04-12T03:24:00"),
+    status: 200,
   },
   {
     domain: "mrbug.ir",
     updateDate: new Date("2025-06-11T03:24:00"),
+    createdDate: new Date("2025-06-11T03:24:00"),
+    status: 500,
+  },
+  {
+    domain: "mrbug.ir",
     createdDate: new Date("2025-06-11T03:24:00"),
   },
   {
@@ -56,12 +64,6 @@ export const assets: AssetType[] = [
   },
   {
     domain: "mrbug.ir",
-    updateDate: new Date("2025-06-11T03:24:00"),
-    createdDate: new Date("2025-06-11T03:24:00"),
-  },
-  {
-    domain: "mrbug.ir",
-    updateDate: new Date("2025-06-11T03:24:00"),
     createdDate: new Date("2025-06-11T03:24:00"),
   },
 ];
