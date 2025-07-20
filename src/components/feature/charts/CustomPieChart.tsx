@@ -5,15 +5,19 @@ import {
   Cell,
   ResponsiveContainer,
 } from "recharts";
-import { CHART_COLORS } from "../../../constants/chartColors";
+import type { CSSProperties } from "react";
 const CustomPieChart = ({
   chartData,
   colors,
   title,
+  tooltipContentStyles,
+  tooltipItemStyles,
 }: {
   chartData: { name: string; value: number }[];
   colors: string[];
   title: string;
+  tooltipContentStyles: CSSProperties;
+  tooltipItemStyles: CSSProperties;
 }) => {
   return (
     <div className="w-[30%] h-64 flex flex-col items-center justify-center">
@@ -44,17 +48,9 @@ const CustomPieChart = ({
             ))}
           </Pie>
           <Tooltip
-            contentStyle={{
-              backgroundColor: CHART_COLORS.darkBlue,
-              borderColor: "white",
-              borderRadius: "2px",
-            }}
+            contentStyle={tooltipContentStyles}
             labelStyle={{ color: "white" }}
-            itemStyle={{
-              color: "white",
-              fontWeight: "bold",
-              fontSize: 14,
-            }}
+            itemStyle={tooltipItemStyles}
           />
         </RechartsPieChart>
       </ResponsiveContainer>

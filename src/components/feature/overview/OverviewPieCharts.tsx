@@ -55,6 +55,16 @@ const OverviewPieCharts = ({ assets }: { assets: AssetType[] }) => {
     <ChartWrraper>
       {chartItems.map((item, index) => (
         <CustomPieChart
+          tooltipContentStyles={{
+            backgroundColor: CHART_COLORS.darkBlue,
+            borderColor: "white",
+            borderRadius: "2px",
+          }}
+          tooltipItemStyles={{
+            color: "white",
+            fontWeight: "bold",
+            fontSize: 14,
+          }}
           key={index}
           title={item.title}
           chartData={item.chartData}
