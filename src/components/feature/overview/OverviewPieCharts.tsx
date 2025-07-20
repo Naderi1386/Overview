@@ -20,7 +20,7 @@ const OverviewPieCharts = ({ assets }: { assets: AssetType[] }) => {
   const chartItems = [
     {
       title: "پوشش IP دارایی‌ها",
-      colors: [CHART_COLORS.red, CHART_COLORS.green],
+      colors: [CHART_COLORS.yellow, CHART_COLORS.lightBlue],
       chartData: chartIPData,
     },
     {
@@ -36,11 +36,10 @@ const OverviewPieCharts = ({ assets }: { assets: AssetType[] }) => {
     },
     {
       title: "پوشش به‌روزرسانی دارایی‌ها",
-      colors: [CHART_COLORS.green, CHART_COLORS.red],
+      colors: [CHART_COLORS.lightBlue, CHART_COLORS.yellow],
       chartData: chartUpdateDateData,
     },
   ];
-
 
   return (
     <ChartWrraper>
