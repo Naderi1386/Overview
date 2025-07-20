@@ -13,7 +13,7 @@ const CustomPieChart = ({
   tooltipContentStyles,
   tooltipItemStyles,
 }: {
-  chartData: { name: string; value: number }[];
+  chartData: { label: string; value: number }[];
   colors: string[];
   title: string;
   tooltipContentStyles: CSSProperties;
@@ -32,7 +32,7 @@ const CustomPieChart = ({
             cy="50%"
             outerRadius={80}
             dataKey="value"
-            nameKey="name"
+            nameKey="label"
             label={({ name, percent }) =>
               `${name}: ${(Number(percent) * 100).toFixed(0)}%`
             }

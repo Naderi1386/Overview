@@ -52,14 +52,14 @@ export const getAssetsWithAndWithoutIP = (asset: AssetType[]) => {
   const assetWithIP = asset.filter((asset) => asset.ipAddresses?.length).length;
   const assetWithoutIP = asset.length - assetWithIP;
   return [
-    { name: "Without IP", value: assetWithoutIP },
-    { name: "With IP", value: assetWithIP },
+    { label: "Without IP", value: assetWithoutIP },
+    { label: "With IP", value: assetWithIP },
   ];
 };
 
 export const getAssetsByStatus = (assets: AssetType[], status: string[]) => {
   const results = status.map((status) => ({
-    name: status,
+    label: status,
     value: assets.filter((asset) => asset.status === Number(status)).length,
   }));
   return results;
@@ -69,7 +69,7 @@ export const getAssetsWithAndWithoutUpdateDate = (assets: AssetType[]) => {
   const assetWithUpdate = assets.filter((asset) => asset.updateDate).length;
   const assetsWithoutUpdate = assets.length - assetWithUpdate;
   return [
-    { name: "updated", value: assetWithUpdate },
-    { name: "No Update", value: assetsWithoutUpdate },
+    { label: "updated", value: assetWithUpdate },
+    { label: "No Update", value: assetsWithoutUpdate },
   ];
 };

@@ -7,7 +7,6 @@ import {
 } from "../../../utils/assetAggregators";
 import ChartWrraper from "../charts/ChartWrraper";
 import CustomPieChart from "../charts/CustomPieChart";
-
 const OverviewPieCharts = ({ assets }: { assets: AssetType[] }) => {
   const chartIPData = getAssetsWithAndWithoutIP(assets);
   const chartStatusData = getAssetsByStatus(assets, [
