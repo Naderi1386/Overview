@@ -18,7 +18,7 @@ const Overview = () => {
     pie: <OverviewPieCharts assets={assets} />,
     bar: <OverviewBarCharts assets={assets} />,
     treemap: <OverviewTreeMap />,
-    line: <OverviewLineChart />,
+    line: <OverviewLineChart assets={assets} />,
   };
   return (
     <section className="px-20 pb-32 pt-10">
