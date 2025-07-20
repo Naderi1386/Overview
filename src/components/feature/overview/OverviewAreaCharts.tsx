@@ -13,11 +13,23 @@ const OverviewAreaCharts = ({ assets }: { assets: AssetType[] }) => {
   return (
     <ChartWrraper>
       <CustomAreaChart
+        tooltipContentStyles={{
+          backgroundColor: CHART_COLORS.darkBlue,
+          borderRadius: "2px",
+          color: "white",
+        }}
+        tooltipItemStyles={{ color: "white", fontWeight: "bold", fontSize: 14 }}
         title="Asset Creation Trend Over Time"
         chartData={chartCreateData}
         colors={[CHART_COLORS.lightBlue, CHART_COLORS.lightBlue]}
       />
       <CustomAreaChart
+        tooltipContentStyles={{
+          backgroundColor: CHART_COLORS.darkBlue,
+          borderRadius: "2px",
+          color: "white",
+        }}
+        tooltipItemStyles={{ color: "white", fontWeight: "bold", fontSize: 14 }}
         title=" Asset Update Activity Over Time"
         chartData={chartUpdateData}
         colors={[CHART_COLORS.yellow, CHART_COLORS.yellow]}

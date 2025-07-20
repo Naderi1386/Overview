@@ -7,16 +7,20 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { CHART_COLORS } from "../../../constants/chartColors";
+import type { CSSProperties } from "react";
 
 const CustomAreaChart = ({
   title,
   chartData,
   colors,
+  tooltipContentStyles,
+  tooltipItemStyles,
 }: {
   title: string;
   chartData: { label: string; count: number }[];
   colors: string[];
+  tooltipContentStyles: CSSProperties;
+  tooltipItemStyles: CSSProperties;
 }) => {
   return (
     <div className="w-[45%] h-72">
@@ -29,13 +33,9 @@ const CustomAreaChart = ({
           <XAxis dataKey="label" />
           <YAxis />
           <Tooltip
-            contentStyle={{
-              backgroundColor: CHART_COLORS.darkBlue,
-              borderRadius: "2px",
-              color: "white",
-            }}
+            contentStyle={tooltipContentStyles}
             labelStyle={{ color: "white" }}
-            itemStyle={{ color: "white", fontWeight: "bold", fontSize: 14 }}
+            itemStyle={tooltipItemStyles}
           />
           <Area
             type="monotone"
@@ -48,5 +48,7 @@ const CustomAreaChart = ({
     </div>
   );
 };
+
+
 
 export default CustomAreaChart;

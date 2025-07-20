@@ -8,7 +8,6 @@ import {
   YAxis,
 } from "recharts";
 import type { CSSProperties } from "react";
-
 const CustomBarChart = ({
   chartData,
   title,
@@ -47,7 +46,5 @@ const CustomBarChart = ({
     </div>
   );
 };
-
-
 
 export default CustomBarChart;
