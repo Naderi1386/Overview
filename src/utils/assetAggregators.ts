@@ -12,7 +12,7 @@ export const groupAssetsByCreateMonth = (assets: AssetType[]) => {
   });
   return Object.entries(groupAssets).map(([date, count]) => ({
     label: date,
-     count,
+    count,
   }));
 };
 
@@ -27,6 +27,23 @@ export const groupAssetsByUpdateMonth = (assets: AssetType[]) => {
   });
   return Object.entries(groupAssets).map(([date, count]) => ({
     label: date,
-     count,
+    count,
+  }));
+};
+
+export const getIPCountPerDomain = (assets: AssetType[]) => {
+  if (!assets.length) return [];
+
+  const domainIPMap: Record<string, number> = {};
+
+  assets.forEach((asset) => {
+    if (!asset.ipAddresses) return;
+
+    domainIPMap[asset.domain] = asset.ipAddresses.length;
+  });
+
+  return Object.entries(domainIPMap).map(([label, count]) => ({
+    label,
+    count,
   }));
 };

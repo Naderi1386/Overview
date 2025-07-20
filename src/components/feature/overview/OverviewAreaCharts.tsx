@@ -7,7 +7,7 @@ import {
 } from "../../../utils/assetAggregators";
 import CustomAreaChart from "../charts/CustomAreaChart";
 
-const OverviewAreaChart = ({ assets }: { assets: AssetType[] }) => {
+const OverviewAreaCharts = ({ assets }: { assets: AssetType[] }) => {
   const chartCreateData = groupAssetsByCreateMonth(assets);
   const chartUpdateData = groupAssetsByUpdateMonth(assets);
   return (
@@ -26,4 +26,4 @@ const OverviewAreaChart = ({ assets }: { assets: AssetType[] }) => {
   );
 };
 
-export default OverviewAreaChart;
+export default OverviewAreaCharts;

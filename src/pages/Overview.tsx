@@ -9,7 +9,7 @@ import { useSearchParams } from "react-router-dom";
 import type { ChartsType } from "../types/ChartsType";
 import type { JSX } from "react";
 import OverviewBarCharts from "../components/feature/overview/OverviewBarCharts";
-import OverviewAreaChart from "../components/feature/overview/OverviewAreaChart";
+import OverviewAreaCharts from "../components/feature/overview/OverviewAreaCharts";
 const Overview = () => {
   const [searchParams] = useSearchParams();
   const chartType = searchParams.get("chartType") as ChartsType;
@@ -17,8 +17,8 @@ const Overview = () => {
   const chartsSections: Record<ChartsType, JSX.Element> = {
     pie: <OverviewPieCharts assets={assets} />,
     bar: <OverviewBarCharts assets={assets} />,
-    treemap: <OverviewTreeMap />,
-    line: <OverviewAreaChart assets={assets} />,
+    treemap: <OverviewTreeMap assets={assets} />,
+    line: <OverviewAreaCharts assets={assets} />,
   };
   return (
     <section className="px-20 pb-32 pt-10">
