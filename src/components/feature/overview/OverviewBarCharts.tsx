@@ -36,11 +36,23 @@ const OverviewBarCharts = ({ assets }: { assets: AssetType[] }) => {
   return (
     <ChartWrraper>
       <CustomBarChart
+        tooltipContentStyles={{
+          backgroundColor: CHART_COLORS.darkBlue,
+          borderRadius: "2px",
+          color: "white",
+        }}
+        tooltipItemStyles={{ color: "white", fontWeight: "bold", fontSize: 14 }}
         title="Asset Count by Status Code"
         barFill={CHART_COLORS.lightBlue}
         chartData={barStatusData}
       />
       <CustomBarChart
+        tooltipContentStyles={{
+          backgroundColor: CHART_COLORS.darkBlue,
+          borderRadius: "2px",
+          color: "white",
+        }}
+        tooltipItemStyles={{ color: "white", fontWeight: "bold", fontSize: 14 }}
         title=" Asset Distribution by IP Count"
         barFill={CHART_COLORS.yellow}
         chartData={barIPData}

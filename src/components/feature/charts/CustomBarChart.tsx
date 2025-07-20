@@ -7,16 +7,20 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { CHART_COLORS } from "../../../constants/chartColors";
+import type { CSSProperties } from "react";
 
 const CustomBarChart = ({
   chartData,
   title,
   barFill,
+  tooltipContentStyles,
+  tooltipItemStyles,
 }: {
   chartData: { label: string; count: number }[];
   title: string;
   barFill: string;
+  tooltipContentStyles: CSSProperties;
+  tooltipItemStyles: CSSProperties;
 }) => {
   return (
     <div className="w-[45%] h-72">
@@ -33,13 +37,9 @@ const CustomBarChart = ({
           <XAxis dataKey="label" stroke="white" />
           <YAxis stroke="white" />
           <Tooltip
-            contentStyle={{
-              backgroundColor: CHART_COLORS.darkBlue,
-              borderRadius: "2px",
-              color: "white",
-            }}
+            contentStyle={tooltipContentStyles}
             labelStyle={{ color: "white" }}
-            itemStyle={{ color: "white", fontWeight: "bold", fontSize: 14 }}
+            itemStyle={tooltipItemStyles}
           />
           <Bar dataKey="count" fill={barFill} />
         </BarChart>
@@ -47,5 +47,7 @@ const CustomBarChart = ({
     </div>
   );
 };
+
+
 
 export default CustomBarChart;
