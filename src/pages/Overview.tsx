@@ -5,11 +5,11 @@ import { AnimatePresence, motion } from "framer-motion";
 import { assets } from "../constants/assetsData";
 import OverviewPieCharts from "../components/feature/overview/OverviewPieCharts";
 import OverviewTreeMap from "../components/feature/overview/OverviewTreeMap";
-import OverviewLineChart from "../components/feature/overview/OverviewLineChart";
 import { useSearchParams } from "react-router-dom";
 import type { ChartsType } from "../types/ChartsType";
 import type { JSX } from "react";
 import OverviewBarCharts from "../components/feature/overview/OverviewBarCharts";
+import OverviewAreaChart from "../components/feature/overview/OverviewAreaChart";
 const Overview = () => {
   const [searchParams] = useSearchParams();
   const chartType = searchParams.get("chartType") as ChartsType;
@@ -18,7 +18,7 @@ const Overview = () => {
     pie: <OverviewPieCharts assets={assets} />,
     bar: <OverviewBarCharts assets={assets} />,
     treemap: <OverviewTreeMap />,
-    line: <OverviewLineChart assets={assets} />,
+    line: <OverviewAreaChart assets={assets} />,
   };
   return (
     <section className="px-20 pb-32 pt-10">
