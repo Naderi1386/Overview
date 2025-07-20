@@ -105,3 +105,23 @@ export const getPortCountPerDomain = (assets: AssetType[]) => {
     count,
   }));
 };
+
+export const getUniqueDomains = (assets: AssetType[]) => {
+  return String(new Set(assets.map((asset) => asset.domain)).size);
+};
+
+export const getTotalPorts = (assets: AssetType[]) => {
+  return String(
+    assets
+      .map((asset) => (asset.ports ? asset.ports : 0))
+      .reduce((accumulator, currentValue) => accumulator + currentValue, 0)
+  );
+};
+
+export const getAssetsWithCNAME = (assets: AssetType[]) => {
+  return String(assets.filter((asset) => asset.cname).length);
+};
+
+export const getAssetsWithIP = (assets: AssetType[]) => {
+  return String(assets.filter((asset) => asset.ipAddresses?.length).length);
+};
