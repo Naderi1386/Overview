@@ -9,7 +9,13 @@ const CustomContentTreemap = ({
   label,
   count,
   fill,
-}: TreemapNode & { label?: string; count?: number; fill: string }) => {
+  contentLabel,
+}: TreemapNode & {
+  label?: string;
+  count?: number;
+  fill: string;
+  contentLabel: string;
+}) => {
   return (
     <g>
       <rect
@@ -44,7 +50,7 @@ const CustomContentTreemap = ({
             fontSize={11}
             dominantBaseline="central"
           >
-            {count} IP
+            {count} {contentLabel}
           </text>
         </>
       ) : null}

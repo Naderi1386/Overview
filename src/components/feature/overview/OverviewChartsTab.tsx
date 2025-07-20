@@ -1,4 +1,5 @@
 import { PieChart, BarChart3, GitBranch, LineChart } from "lucide-react";
+import { cloneElement } from "react";
 import { useSearchParams } from "react-router-dom";
 const chartItems = [
   {
@@ -34,18 +35,24 @@ const OverviewChartsTab = () => {
   };
   return (
     <div className="tabs tabs-box rounded-xl p-1.5 bg-black/30 border border-white/10">
-      {chartItems.map((item) => (
-        <div
-          onClick={() => handleClick(item.key)}
-          key={item.key}
-          className={`tab flex items-center gap-3 duration-300 ease-in-out delay-75 ${
-            chartType === item.key && "bg-primary-20 !rounded-xl !text-white"
-          }`}
-        >
-          <span className="font-semibold">{item.label}</span>
-          {item.icon}
-        </div>
-      ))}
+      {chartItems.map((item) => {
+        const isActive = item.key === chartType;
+        const animatedIcon = cloneElement(item.icon, {
+          classNames: `transition-all duration-75 ${isActive && "rotate-90"} `,
+        });
+        return (
+          <div
+            onClick={() => handleClick(item.key)}
+            key={item.key}
+            className={`tab flex items-center gap-3 ${
+              isActive && "bg-primary-20 !rounded-xl !text-white"
+            }`}
+          >
+            <span className="font-semibold">{item.label}</span>
+            {animatedIcon}
+          </div>
+        );
+      })}
     </div>
   );
 };

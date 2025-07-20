@@ -8,12 +8,14 @@ const CustomTreeMap = ({
   fill,
   tooltipContentStyles,
   tooltipItemStyles,
+  contentLabel
 }: {
   title: string;
   chartData: { label: string; count: number }[];
   fill: string;
   tooltipContentStyles: CSSProperties;
   tooltipItemStyles: CSSProperties;
+  contentLabel:string
 }) => {
   return (
     <div className="w-[45%] h-[300px] pb-4">
@@ -27,7 +29,7 @@ const CustomTreeMap = ({
           nameKey="label"
           stroke="white"
           fill={fill}
-          content={(props) => <CustomContentTreemap {...props} fill={fill} />}
+          content={(props) => <CustomContentTreemap {...props} fill={fill} contentLabel={contentLabel} />}
         >
           <Tooltip
             contentStyle={tooltipContentStyles}

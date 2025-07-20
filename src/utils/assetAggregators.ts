@@ -92,3 +92,16 @@ export const getAssetsWithSingleAndMultipleIP = (assets: AssetType[]) => {
     { label: "Multiple IPs", value: assetsWithMultipleIP },
   ];
 };
+
+export const getPortCountPerDomain = (assets: AssetType[]) => {
+  const groupDomains: Record<string, number> = {};
+  if (!assets.length) return [];
+  assets.forEach((asset) => {
+    if (!asset.ports) return;
+    groupDomains[asset.domain] = asset.ports;
+  });
+  return Object.entries(groupDomains).map(([label, count]) => ({
+    label,
+    count,
+  }));
+};
