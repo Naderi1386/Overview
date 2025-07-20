@@ -19,7 +19,7 @@ const chartItems = [
   {
     label: "Trends",
     icon: <LineChart className="w-6 h-8 text-red" />,
-    key: "line",
+    key: "area",
   },
 ];
 
