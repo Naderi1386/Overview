@@ -15,7 +15,7 @@ const CustomBarChart = ({
   tooltipContentStyles,
   tooltipItemStyles,
 }: {
-  chartData: { label: string; count: number }[];
+  chartData: { label: string; value: number }[];
   title: string;
   barFill: string;
   tooltipContentStyles: CSSProperties;
@@ -40,7 +40,7 @@ const CustomBarChart = ({
             labelStyle={{ color: "white" }}
             itemStyle={tooltipItemStyles}
           />
-          <Bar dataKey="count" fill={barFill} />
+          <Bar dataKey="value" fill={barFill} />
         </BarChart>
       </ResponsiveContainer>
     </div>
