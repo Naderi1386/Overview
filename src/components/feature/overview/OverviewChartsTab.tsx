@@ -1,6 +1,7 @@
 import { PieChart, BarChart3, GitBranch, LineChart } from "lucide-react";
 import { cloneElement } from "react";
 import { useSearchParams } from "react-router-dom";
+import OverviewChartTabItems from "./OverviewChartTabItems";
 const chartItems = [
   {
     label: "Distribution",
@@ -43,16 +44,13 @@ const OverviewChartsTab = () => {
           } transition-all duration-500 ${isActive && "rotate-[360deg]"} `,
         });
         return (
-          <div
-            onClick={() => handleClick(item.key)}
+          <OverviewChartTabItems
+            item={item}
             key={item.key}
-            className={`tab flex items-center gap-3 ${
-              isActive && "bg-primary-20 !rounded-xl !text-white"
-            }`}
-          >
-            <span className="font-semibold">{item.label}</span>
-            {animatedIcon}
-          </div>
+            isActive={isActive}
+            animatedIcon={animatedIcon}
+            handleClick={() => handleClick(item.key)}
+          />
         );
       })}
     </div>
