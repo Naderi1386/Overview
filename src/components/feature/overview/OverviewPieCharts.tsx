@@ -19,12 +19,12 @@ const OverviewPieCharts = ({ assets }: { assets: AssetType[] }) => {
   const chartUpdateDateData = getAssetsWithAndWithoutUpdateDate(assets);
   const chartItems = [
     {
-      title: "IP Coverage of Assets",
+      title: "پوشش IP دارایی‌ها",
       colors: [CHART_COLORS.red, CHART_COLORS.green],
       chartData: chartIPData,
     },
     {
-      title: "Response Status Breakdown",
+      title: "تفکیک وضعیت پاسخ",
       colors: [
         CHART_COLORS.green,
         CHART_COLORS.yellow,
@@ -35,11 +35,12 @@ const OverviewPieCharts = ({ assets }: { assets: AssetType[] }) => {
       chartData: chartStatusData,
     },
     {
-      title: "Asset Update Coverage",
+      title: "پوشش به‌روزرسانی دارایی‌ها",
       colors: [CHART_COLORS.green, CHART_COLORS.red],
       chartData: chartUpdateDateData,
     },
   ];
+
 
   return (
     <ChartWrraper>

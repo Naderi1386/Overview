@@ -10,18 +10,18 @@ import CustomAreaChart from "../charts/CustomAreaChart";
 const OverviewAreaCharts = ({ assets }: { assets: AssetType[] }) => {
   const chartCreateData = groupAssetsByCreateMonth(assets);
   const chartUpdateData = groupAssetsByUpdateMonth(assets);
-  const chartItems = [
-    {
-      title: "Asset Creation Trend Over Time",
-      chartData: chartCreateData,
-      colors: [CHART_COLORS.lightBlue, CHART_COLORS.lightBlue],
-    },
-    {
-      title: "Asset Update Activity Over Time",
-      chartData: chartUpdateData,
-      colors: [CHART_COLORS.yellow, CHART_COLORS.yellow],
-    },
-  ];
+const chartItems = [
+  {
+    title: "روند ایجاد دارایی‌ها در طول زمان",
+    chartData: chartCreateData,
+    colors: [CHART_COLORS.lightBlue, CHART_COLORS.lightBlue],
+  },
+  {
+    title: "فعالیت به‌روزرسانی دارایی‌ها در طول زمان",
+    chartData: chartUpdateData,
+    colors: [CHART_COLORS.yellow, CHART_COLORS.yellow],
+  },
+];
   return (
     <ChartWrraper>
       {chartItems.map((item, index) => (

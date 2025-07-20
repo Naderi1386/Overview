@@ -18,11 +18,11 @@ const OverviewCards = ({ assets }: { assets: AssetType[] }) => {
 
   return (
     <div className="flex items-center justify-around bg-black/30 border border-white/10 rounded-xl p-1">
-      <OverviewCard label="Total Assets" value={totalAssets} />
-      <OverviewCard label="Unique Domains" value={uniqueDomains} />
-      <OverviewCard label="Ports" value={ports} />
-      <OverviewCard label="Assets with CNAME" value={assetsWithCNAME} />
-      <OverviewCard label="Assets Without IP" value={assetsWithIP} />
+      <OverviewCard label="مجموع دارایی‌ها" value={totalAssets} />
+      <OverviewCard label="دامنه‌های یکتا" value={uniqueDomains} />
+      <OverviewCard label="پورت‌ها" value={ports} />
+      <OverviewCard label="دارایی‌ها با CNAME" value={assetsWithCNAME} />
+      <OverviewCard label="دارایی‌ها بدون IP" value={assetsWithIP} />
     </div>
   );
 };

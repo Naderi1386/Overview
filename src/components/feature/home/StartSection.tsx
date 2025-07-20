@@ -13,7 +13,7 @@ const StartSection = () => {
           transition={{ type: "spring", stiffness: 300, damping: 10 }}
           className="btn bg-black rounded-lg border-white/10 w-96 h-[3.75rem] text-2xl font-medium"
         >
-          Get Started
+          شروع
         </motion.button>
       </Link>
     </div>

@@ -4,26 +4,27 @@ import { useSearchParams } from "react-router-dom";
 import OverviewChartTabItems from "./OverviewChartTabItems";
 const chartItems = [
   {
-    label: "Distribution",
+    label: "توزیع",
     icon: <PieChart className="w-6 h-8 text-primary " />,
     key: "pie",
   },
   {
-    label: "Comparison",
+    label: "مقایسه",
     icon: <BarChart3 className="w-6 h-8 text-sky" />,
     key: "bar",
   },
   {
-    label: "Structure",
+    label: "ساختار",
     icon: <GitBranch className="w-6 h-8 text-green" />,
     key: "treemap",
   },
   {
-    label: "Trends",
+    label: "روندها",
     icon: <LineChart className="w-6 h-8 text-red" />,
     key: "area",
   },
 ];
+
 
 const OverviewChartsTab = () => {
   const [searchParams, setSearchParams] = useSearchParams();

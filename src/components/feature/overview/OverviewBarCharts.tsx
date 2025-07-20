@@ -18,12 +18,12 @@ const OverviewBarCharts = ({ assets }: { assets: AssetType[] }) => {
   const barIPData = getAssetsWithSingleAndMultipleIP(assets);
   const chartItems = [
     {
-      title: "Asset Count by Status Code",
+      title: "تعداد دارایی‌ها بر اساس کد وضعیت",
       barFill: CHART_COLORS.lightBlue,
       chartData: barStatusData,
     },
     {
-      title: "Asset Distribution by IP Count",
+      title: "توزیع دارایی‌ها بر اساس تعداد IP",
       barFill: CHART_COLORS.yellow,
       chartData: barIPData,
     },

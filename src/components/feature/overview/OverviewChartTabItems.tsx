@@ -23,7 +23,7 @@ const OverviewChartTabItems = ({
         isActive && "bg-primary-20 !rounded-xl !text-white"
       }`}
     >
-      <span className="font-semibold">{item.label}</span>
+      <span className="font-bold">{item.label}</span>
       {animatedIcon}
     </div>
   );

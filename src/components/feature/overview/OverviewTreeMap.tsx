@@ -10,19 +10,18 @@ import CustomTreeMap from "../charts/CustomTreeMap";
 const OverviewTreeMap = ({ assets }: { assets: AssetType[] }) => {
   const chartIPData = getIPCountPerDomain(assets);
   const chartPortsData = getPortCountPerDomain(assets);
-  console.log(chartPortsData);
   const chartData = [
     {
       chartData: chartIPData,
-      title: "IP Count per Domain",
+      title: "تعداد IP به ازای هر دامنه",
       fill: CHART_COLORS.lightBlue,
       contentLabel: "IP",
     },
     {
       chartData: chartPortsData,
-      title: "Port Count Distribution by Domain",
+      title: "توزیع تعداد پورت‌ها بر اساس دامنه",
       fill: CHART_COLORS.yellow,
-      contentLabel: "Ports",
+      contentLabel: "پورت‌ها",
     },
   ];
   return (

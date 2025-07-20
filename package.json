@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/vazirmatn": "^5.2.6",
     "daisyui": "^5.0.46",
     "date-fns": "^4.1.0",
     "framer-motion": "^12.23.6",
