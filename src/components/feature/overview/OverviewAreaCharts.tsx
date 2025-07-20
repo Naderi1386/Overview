@@ -10,30 +10,38 @@ import CustomAreaChart from "../charts/CustomAreaChart";
 const OverviewAreaCharts = ({ assets }: { assets: AssetType[] }) => {
   const chartCreateData = groupAssetsByCreateMonth(assets);
   const chartUpdateData = groupAssetsByUpdateMonth(assets);
+  const chartItems = [
+    {
+      title: "Asset Creation Trend Over Time",
+      chartData: chartCreateData,
+      colors: [CHART_COLORS.lightBlue, CHART_COLORS.lightBlue],
+    },
+    {
+      title: "Asset Update Activity Over Time",
+      chartData: chartUpdateData,
+      colors: [CHART_COLORS.yellow, CHART_COLORS.yellow],
+    },
+  ];
   return (
     <ChartWrraper>
-      <CustomAreaChart
-        tooltipContentStyles={{
-          backgroundColor: CHART_COLORS.darkBlue,
-          borderRadius: "2px",
-          color: "white",
-        }}
-        tooltipItemStyles={{ color: "white", fontWeight: "bold", fontSize: 14 }}
-        title="Asset Creation Trend Over Time"
-        chartData={chartCreateData}
-        colors={[CHART_COLORS.lightBlue, CHART_COLORS.lightBlue]}
-      />
-      <CustomAreaChart
-        tooltipContentStyles={{
-          backgroundColor: CHART_COLORS.darkBlue,
-          borderRadius: "2px",
-          color: "white",
-        }}
-        tooltipItemStyles={{ color: "white", fontWeight: "bold", fontSize: 14 }}
-        title=" Asset Update Activity Over Time"
-        chartData={chartUpdateData}
-        colors={[CHART_COLORS.yellow, CHART_COLORS.yellow]}
-      />
+      {chartItems.map((item, index) => (
+        <CustomAreaChart
+          key={index}
+          tooltipContentStyles={{
+            backgroundColor: CHART_COLORS.darkBlue,
+            borderRadius: "2px",
+            color: "white",
+          }}
+          tooltipItemStyles={{
+            color: "white",
+            fontWeight: "bold",
+            fontSize: 14,
+          }}
+          title={item.title}
+          chartData={item.chartData}
+          colors={item.colors}
+        />
+      ))}
     </ChartWrraper>
   );
 };

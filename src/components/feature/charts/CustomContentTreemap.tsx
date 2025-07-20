@@ -19,7 +19,7 @@ const CustomContentTreemap = ({
         height={height}
         style={{
           fill: fill,
-          stroke: "#fff",
+          stroke: "whitesmoke",
           strokeWidth: 2 / (depth + 1e-10),
           strokeOpacity: 1 / (depth + 1e-10),
         }}
