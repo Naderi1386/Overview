@@ -34,11 +34,13 @@ const OverviewChartsTab = () => {
     }
   };
   return (
-    <div className="tabs tabs-box rounded-xl p-1.5 bg-black/30 border border-white/10">
+    <div className="tabs tabs-box rounded-xl p-1.5 bg-black/30 border border-white/10 ">
       {chartItems.map((item) => {
         const isActive = item.key === chartType;
         const animatedIcon = cloneElement(item.icon, {
-          classNames: `transition-all duration-75 ${isActive && "rotate-90"} `,
+          className: `${
+            item.icon.props.className
+          } transition-all duration-500 ${isActive && "rotate-[360deg]"} `,
         });
         return (
           <div
