@@ -4,7 +4,7 @@ import ChartWrraper from "../charts/ChartWrraper";
 import CustomBarChart from "../charts/CustomBarChart";
 import {
   getAssetsByStatus,
-  getAssetsWithSingleAndMultipleIP,
+  getTechnologiesOfAssets,
 } from "../../../utils/assetAggregators";
 
 const OverviewBarCharts = ({ assets }: { assets: AssetType[] }) => {
@@ -15,7 +15,14 @@ const OverviewBarCharts = ({ assets }: { assets: AssetType[] }) => {
     "404",
     "500",
   ]);
-  const barIPData = getAssetsWithSingleAndMultipleIP(assets);
+  const barTechnologyData = getTechnologiesOfAssets(assets, [
+    "WordPress",
+    "Node.js",
+    "PHP",
+    "React",
+    "MySQL",
+  ]);
+
   const chartItems = [
     {
       title: "تعداد دارایی‌ها بر اساس کد وضعیت",
@@ -23,9 +30,9 @@ const OverviewBarCharts = ({ assets }: { assets: AssetType[] }) => {
       chartData: barStatusData,
     },
     {
-      title: "توزیع دارایی‌ها بر اساس تعداد IP",
+      title: "بیشترین تکنولوژی‌های استفاده‌شده",
       barFill: CHART_COLORS.yellow,
-      chartData: barIPData,
+      chartData: barTechnologyData,
     },
   ];
   return (

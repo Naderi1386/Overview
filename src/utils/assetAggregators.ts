@@ -76,23 +76,6 @@ export const getAssetsWithAndWithoutUpdateDate = (assets: AssetType[]) => {
   ];
 };
 
-export const getAssetsWithSingleAndMultipleIP = (assets: AssetType[]) => {
-  const assetsWithSignleIP = assets.filter(
-    (asset) => asset.ipAddresses && asset.ipAddresses?.length === 1
-  ).length;
-  const assetsWithMultipleIP = assets.filter(
-    (asset) => asset.ipAddresses && asset.ipAddresses?.length > 1
-  ).length;
-  return [
-    {
-      label: "No IP",
-      value: assets.length - assetsWithMultipleIP - assetsWithSignleIP,
-    },
-    { label: "1 IP", value: assetsWithSignleIP },
-    { label: "Multiple IPs", value: assetsWithMultipleIP },
-  ];
-};
-
 export const getPortCountPerDomain = (assets: AssetType[]) => {
   const groupDomains: Record<string, number> = {};
   if (!assets.length) return [];
@@ -124,4 +107,27 @@ export const getAssetsWithCNAME = (assets: AssetType[]) => {
 
 export const getAssetsWithIP = (assets: AssetType[]) => {
   return String(assets.filter((asset) => asset.ipAddresses?.length).length);
+};
+
+export const getTechnologiesOfAssets = (
+  assets: AssetType[],
+  technologies: string[]
+) => {
+  if (!assets.length) return [];
+  const groupedTechnologies: Record<string, number> = {};
+  let otherCount: number = 0;
+  assets.forEach((asset) => {
+    if (!asset.technologies) return;
+    asset.technologies.forEach((tech) => {
+      if (technologies.includes(tech)) {
+        if (!groupedTechnologies[tech]) groupedTechnologies[tech] = 1;
+        else groupedTechnologies[tech]++;
+      } else otherCount++;
+    });
+  });
+  if (otherCount > 0) groupedTechnologies["others"] = otherCount;
+  return Object.entries(groupedTechnologies).map((item) => ({
+    label: item[0],
+    value: item[1],
+  }));
 };
