@@ -19,18 +19,18 @@ const OverviewPieCharts = ({ assets }: { assets: AssetType[] }) => {
   const chartUpdateDateData = getAssetsWithAndWithoutUpdateDate(assets);
   const chartItems = [
     {
-      title: "پوشش IP دارایی‌ها",
+      title: "بررسی وجود آی دی در دارایی ها",
       colors: [CHART_COLORS.yellow, CHART_COLORS.lightBlue],
       chartData: chartIPData,
     },
     {
       title: "تفکیک وضعیت پاسخ",
       colors: [
-        CHART_COLORS.Cyan,
+        CHART_COLORS.cyan,
         CHART_COLORS.yellow,
         CHART_COLORS.purple,
         CHART_COLORS.lightBlue,
-        CHART_COLORS.Orange,
+        CHART_COLORS.orange,
       ],
       chartData: chartStatusData,
     },

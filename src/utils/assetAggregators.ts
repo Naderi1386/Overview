@@ -106,7 +106,7 @@ export const getAssetsWithCNAME = (assets: AssetType[]) => {
 };
 
 export const getAssetsWithIP = (assets: AssetType[]) => {
-  return String(assets.filter((asset) => asset.ipAddresses?.length).length);
+  return String(assets.filter((asset) => !asset.ipAddresses?.length).length);
 };
 
 export const getTechnologiesOfAssets = (
