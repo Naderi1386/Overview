@@ -10,7 +10,7 @@ import OverviewCard from "./OverviewCard";
 
 const OverviewCards = ({ assets }: { assets: AssetType[] }) => {
   return (
-    <div className="flex items-center justify-around bg-black/30 border border-white/10 rounded-xl p-1">
+    <div className="flex items-center justify-around flex-wrap gap-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-2.5 shadow-lg">
       <OverviewCard label="مجموع دارایی‌ها" value={String(assets.length)} />
       <OverviewCard label="دامنه‌های یکتا" value={getUniqueDomains(assets)} />
       <OverviewCard label="پورت‌ها" value={getTotalPorts(assets)} />

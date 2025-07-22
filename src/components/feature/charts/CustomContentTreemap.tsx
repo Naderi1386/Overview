@@ -37,7 +37,7 @@ const CustomContentTreemap = ({
             y={y + height / 2 - 7}
             textAnchor="middle"
             fill="#000"
-            fontSize={12}
+            fontSize={14}
             dominantBaseline="central"
           >
             {label}
