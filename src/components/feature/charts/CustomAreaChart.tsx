@@ -29,9 +29,28 @@ const CustomAreaChart = ({
       </h3>
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart data={chartData}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="label" />
-          <YAxis />
+          <CartesianGrid strokeDasharray="3 3" stroke="white" opacity={0.1} />
+          <XAxis
+            dataKey="label"
+            axisLine={false}
+            tickLine={false}
+            tick={{
+              fill: "white",
+              opacity: 0.5,
+              fontSize: 14,
+              fontWeight: 400,
+            }}
+          />
+          <YAxis
+            axisLine={false}
+            tickLine={false}
+            tick={{
+              fill: "white",
+              opacity: 0.5,
+              fontSize: 14,
+              fontWeight: 400,
+            }}
+          />
           <Tooltip
             contentStyle={tooltipContentStyles}
             labelStyle={{ color: "white" }}

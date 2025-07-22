@@ -21,7 +21,8 @@ const Overview = () => {
     area: <OverviewAreaCharts assets={assets} />,
   };
   return (
-    <section className="px-20 pb-32 pt-10">
+    <section className="px-20 pb-32 pt-10 relative">
+      <div className="absolute inset-0 m-auto w-[65rem] h-[35rem]  rounded-full bg-white/5 blur-3xl"></div>
       <motion.div
         initial={{ opacity: 0, y: -80 }}
         animate={{ opacity: 1, y: 0 }}
