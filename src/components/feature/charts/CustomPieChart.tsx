@@ -31,12 +31,14 @@ const CustomPieChart = ({
             cx="50%"
             cy="50%"
             outerRadius={80}
+            innerRadius={55}
             dataKey="value"
             nameKey="label"
             label={({ name, percent }) =>
               `${name}: ${(Number(percent) * 100).toFixed(0)}%`
             }
             isAnimationActive={true}
+            paddingAngle={5}
           >
             {chartData.map((_, index) => (
               <Cell

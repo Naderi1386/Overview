@@ -46,14 +46,15 @@ const OverviewPieCharts = ({ assets }: { assets: AssetType[] }) => {
       {chartItems.map((item, index) => (
         <CustomPieChart
           tooltipContentStyles={{
-            backgroundColor: CHART_COLORS.darkBlue,
-            borderColor: "white",
-            borderRadius: "2px",
+            backgroundColor: "white",
+            borderColor: CHART_COLORS.darkBlue,
+            borderRadius: "40px",
+            borderWidth: 2,
           }}
           tooltipItemStyles={{
-            color: "white",
+            color: CHART_COLORS.darkBlue,
             fontWeight: "bold",
-            fontSize: 14,
+            fontSize: 12,
           }}
           key={index}
           title={item.title}
