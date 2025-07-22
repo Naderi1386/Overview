@@ -60,3 +60,14 @@
 .recharts-bar path:focus {
   outline: none;
 }
+.recharts-pie-label-line {
+  stroke: white;
+  stroke-width: 1px;
+  stroke-dasharray: 4 2;
+  opacity: 0.4;
+}
+.recharts-pie-label-text {
+  fill: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}

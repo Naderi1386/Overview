@@ -14,9 +14,10 @@ const OverviewCards = ({ assets }: { assets: AssetType[] }) => {
     <motion.div
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.25, ease: "backIn" }}
+      transition={{ duration: 0.45, ease: "easeIn",delay:0.05, }}
       whileHover={{
         boxShadow: "0 0 20px rgba(255,255,255,0.15)",
+        
       }}
       className="flex items-center justify-around flex-wrap gap-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-2.5 shadow-lg"
     >
