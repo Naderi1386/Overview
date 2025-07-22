@@ -3,7 +3,7 @@ const OverviewCard = ({ label, value }: { label: string; value: string }) => {
     <div className="py-2 px-4 bg-black/10">
       <div className="text-center">
         <h2 className="font-medium text-white/60 text-md mb-1.5">{label}</h2>
-        <p className="font-bold text-xl">{value}</p>
+        <p className="font-bold text-lg">{value}</p>
       </div>
     </div>
   );

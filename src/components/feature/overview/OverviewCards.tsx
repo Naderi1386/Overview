@@ -2,6 +2,7 @@ import type { AssetType } from "../../../types/assetType";
 import {
   getAssetsWithCNAME,
   getAssetsWithIP,
+  getMostUsedTechnology,
   getTotalPorts,
   getUniqueDomains,
 } from "../../../utils/assetAggregators";
@@ -18,6 +19,10 @@ const OverviewCards = ({ assets }: { assets: AssetType[] }) => {
         value={getAssetsWithCNAME(assets)}
       />
       <OverviewCard label="دارایی‌ها بدون IP" value={getAssetsWithIP(assets)} />
+      <OverviewCard
+        label="پرکاربردترین فناوری"
+        value={getMostUsedTechnology(assets)}
+      />
     </div>
   );
 };

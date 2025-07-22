@@ -131,3 +131,21 @@ export const getTechnologiesOfAssets = (
     value: item[1],
   }));
 };
+
+export const getMostUsedTechnology = (assets: AssetType[]) => {
+  if (!assets.length) return "";
+  const groupedTechnologies: Record<string, number> = {};
+  assets.forEach((asset) => {
+    if (!asset.technologies) return;
+    asset.technologies.forEach((tech) => {
+      if (!groupedTechnologies[tech]) groupedTechnologies[tech] = 1;
+      else groupedTechnologies[tech]++;
+    });
+  });
+  const allTechnologies = Object.entries(groupedTechnologies).map((item) => ({
+    label: item[0],
+    value: item[1],
+  }));
+  const mostUsedTechnology = allTechnologies.sort((a, b) => a.value - b.value);
+  return mostUsedTechnology[mostUsedTechnology.length - 1].label;
+};
