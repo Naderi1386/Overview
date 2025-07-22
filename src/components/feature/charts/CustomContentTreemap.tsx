@@ -7,7 +7,7 @@ const CustomContentTreemap = ({
   width,
   height,
   label,
-  count,
+  value,
   fill,
   contentLabel,
 }: TreemapNode & {
@@ -50,7 +50,7 @@ const CustomContentTreemap = ({
             fontSize={11}
             dominantBaseline="central"
           >
-            {count} {contentLabel}
+            {contentLabel}: {value}
           </text>
         </>
       ) : null}

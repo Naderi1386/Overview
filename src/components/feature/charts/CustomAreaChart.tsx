@@ -17,7 +17,7 @@ const CustomAreaChart = ({
   tooltipItemStyles,
 }: {
   title: string;
-  chartData: { label: string; count: number }[];
+  chartData: { label: string; value: number }[];
   colors: string[];
   tooltipContentStyles: CSSProperties;
   tooltipItemStyles: CSSProperties;
@@ -39,7 +39,7 @@ const CustomAreaChart = ({
           />
           <Area
             type="monotone"
-            dataKey="count"
+            dataKey="value"
             stroke={colors[0]}
             fill={colors[1]}
           />

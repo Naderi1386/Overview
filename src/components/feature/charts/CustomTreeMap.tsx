@@ -11,7 +11,7 @@ const CustomTreeMap = ({
   contentLabel
 }: {
   title: string;
-  chartData: { label: string; count: number }[];
+  chartData: { label: string; value: number }[];
   fill: string;
   tooltipContentStyles: CSSProperties;
   tooltipItemStyles: CSSProperties;
@@ -25,7 +25,7 @@ const CustomTreeMap = ({
       <ResponsiveContainer width="100%" height="100%">
         <Treemap
           data={chartData}
-          dataKey="count"
+          dataKey="value"
           nameKey="label"
           stroke="white"
           fill={fill}

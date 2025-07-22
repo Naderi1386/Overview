@@ -10,9 +10,9 @@ export const groupAssetsByCreateMonth = (assets: AssetType[]) => {
     if (!groupAssets[monthKey]) groupAssets[monthKey] = 1;
     else groupAssets[monthKey]++;
   });
-  return Object.entries(groupAssets).map(([date, count]) => ({
+  return Object.entries(groupAssets).map(([date, value]) => ({
     label: date,
-    count,
+    value,
   }));
 };
 
@@ -25,9 +25,9 @@ export const groupAssetsByUpdateMonth = (assets: AssetType[]) => {
     if (!groupAssets[monthKey]) groupAssets[monthKey] = 1;
     else groupAssets[monthKey]++;
   });
-  return Object.entries(groupAssets).map(([date, count]) => ({
+  return Object.entries(groupAssets).map(([date, value]) => ({
     label: date,
-    count,
+    value,
   }));
 };
 
@@ -42,9 +42,9 @@ export const getIPCountPerDomain = (assets: AssetType[]) => {
     domainIPMap[asset.domain] = asset.ipAddresses.length;
   });
 
-  return Object.entries(domainIPMap).map(([label, count]) => ({
+  return Object.entries(domainIPMap).map(([label, value]) => ({
     label,
-    count,
+    value,
   }));
 };
 
@@ -83,9 +83,9 @@ export const getPortCountPerDomain = (assets: AssetType[]) => {
     if (!asset.ports) return;
     groupDomains[asset.domain] = asset.ports;
   });
-  return Object.entries(groupDomains).map(([label, count]) => ({
+  return Object.entries(groupDomains).map(([label, value]) => ({
     label,
-    count,
+    value,
   }));
 };
 
