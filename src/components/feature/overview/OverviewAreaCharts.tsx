@@ -27,18 +27,16 @@ const OverviewAreaCharts = ({ assets }: { assets: AssetType[] }) => {
       {chartItems.map((item, index) => (
         <CustomAreaChart
           key={index}
-          tooltipContentStyles={{
-            backgroundColor: "white",
-            borderRadius: "2px",
-            color: item.colors[0],
-            padding: 10,
-            borderColor: item.colors[0],
-            borderWidth: 2,
-          }}
           tooltipItemStyles={{
-            color: item.colors[0],
+            color: "black",
             fontWeight: "bold",
             fontSize: 14,
+          }}
+          tooltipContentStyles={{
+            backgroundColor: "white",
+            borderRadius: "45px",
+            color: "white",
+            padding: 10,
           }}
           title={item.title}
           chartData={item.chartData}

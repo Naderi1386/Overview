@@ -50,16 +50,16 @@ const OverviewPieCharts = ({ assets }: { assets: AssetType[] }) => {
       {chartItems.map((item, index) => (
         <CustomPieChart
           handleNavigate={(name) => navigate(`${item.filterBaseURL}${name}`)}
-          tooltipContentStyles={{
-            backgroundColor: "white",
-            borderColor: CHART_COLORS.darkBlue,
-            borderRadius: "40px",
-            borderWidth: 2,
-          }}
           tooltipItemStyles={{
-            color: CHART_COLORS.darkBlue,
+            color: "black",
             fontWeight: "bold",
             fontSize: 12,
+          }}
+          tooltipContentStyles={{
+            backgroundColor: "white",
+            borderRadius: "45px",
+            color: "white",
+            padding: 10,
           }}
           key={index}
           title={item.title}

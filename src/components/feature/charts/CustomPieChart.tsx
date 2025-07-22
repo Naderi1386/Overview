@@ -54,7 +54,6 @@ const CustomPieChart = ({
                 fill={colors[index]}
                 stroke="#1f2937"
                 strokeWidth={1}
-                tabIndex={-1}
               />
             ))}
           </Pie>

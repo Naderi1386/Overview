@@ -31,14 +31,15 @@ const OverviewTreeMap = ({ assets }: { assets: AssetType[] }) => {
           contentLabel={item.contentLabel}
           key={index}
           tooltipItemStyles={{
-            color: item.fill,
+            color: "black",
             fontWeight: "bold",
             fontSize: 14,
           }}
           tooltipContentStyles={{
             backgroundColor: "white",
-            borderRadius: "2px",
+            borderRadius: "45px",
             color: "white",
+            padding: 10,
           }}
           title={item.title}
           chartData={item.chartData}

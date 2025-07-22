@@ -38,7 +38,7 @@ const CustomAreaChart = ({
             itemStyle={tooltipItemStyles}
             content={({ label, payload }) => (
               <div style={tooltipContentStyles}>
-                <span style={{ color: colors[0], fontSize: 14 }}>{label}:</span>
+                <span style={{ color: "black", fontSize: 14 }}>{label}:</span>
                 <span style={tooltipItemStyles}> {payload[0]?.value}</span>
               </div>
             )}
