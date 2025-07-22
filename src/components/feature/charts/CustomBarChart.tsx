@@ -14,12 +14,14 @@ const CustomBarChart = ({
   barFill,
   tooltipContentStyles,
   tooltipItemStyles,
+  handleNavigate,
 }: {
   chartData: { label: string; value: number }[];
   title: string;
   barFill: string;
   tooltipContentStyles: CSSProperties;
   tooltipItemStyles: CSSProperties;
+  handleNavigate?: (name: string) => void;
 }) => {
   return (
     <div className="w-[45%] h-72">
@@ -43,7 +45,18 @@ const CustomBarChart = ({
               </div>
             )}
           />
-          <Bar dataKey="value" fill={barFill} />
+          <Bar
+            className={`${handleNavigate && "cursor-pointer"}`}
+            dataKey="value"
+            fill={barFill}
+            onClick={(data) => {
+              if (!chartData.length) return;
+              const label = data.payload.label as string;
+              if (label && typeof handleNavigate === "function") {
+                handleNavigate(String(label));
+              }
+            }}
+          />
         </BarChart>
       </ResponsiveContainer>
     </div>

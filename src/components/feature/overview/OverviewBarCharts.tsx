@@ -6,8 +6,10 @@ import {
   getAssetsByStatus,
   getTechnologiesOfAssets,
 } from "../../../utils/assetAggregators";
+import { useNavigate } from "react-router-dom";
 
 const OverviewBarCharts = ({ assets }: { assets: AssetType[] }) => {
+  const navigate = useNavigate();
   const barStatusData = getAssetsByStatus(assets, [
     "200",
     "301",
@@ -28,17 +30,20 @@ const OverviewBarCharts = ({ assets }: { assets: AssetType[] }) => {
       title: "تعداد دارایی‌ها بر اساس کد وضعیت",
       barFill: CHART_COLORS.lightBlue,
       chartData: barStatusData,
+      filterBaseURL: "/assets?filterBy=status&value=",
     },
     {
       title: "بیشترین تکنولوژی‌های استفاده‌شده",
       barFill: CHART_COLORS.yellow,
       chartData: barTechnologyData,
+      filterBaseURL: "/assets?filterBy=technology&value=",
     },
   ];
   return (
     <ChartWrraper>
       {chartItems.map((item, index) => (
         <CustomBarChart
+          handleNavigate={(name) => navigate(`${item.filterBaseURL}${name}`)}
           key={index}
           tooltipItemStyles={{
             color: "black",
