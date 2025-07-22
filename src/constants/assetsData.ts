@@ -9,6 +9,7 @@ export const assets: AssetType[] = [
     updateDate: new Date("2025-02-14T03:24:00"),
     createdDate: new Date("2025-02-14T03:24:00"),
     cname: "alias.mrbug.ir",
+    technologies: ["PHP", "Apache", "MySQL"],
   },
   {
     domain: "www.mrbug.ir:80",
@@ -17,6 +18,7 @@ export const assets: AssetType[] = [
     ports: 80,
     updateDate: new Date("2025-03-18T03:24:00"),
     createdDate: new Date("2025-03-24T03:24:00"),
+    technologies: ["Laravel", "Nginx"],
   },
   {
     domain: "webmail.mrbug.ir:443",
@@ -26,6 +28,7 @@ export const assets: AssetType[] = [
     createdDate: new Date("2025-04-10T03:24:00"),
     cname: "mail.mrbug.ir",
     status: 401,
+    technologies: ["Roundcube", "Dovecot", "Postfix"],
   },
   {
     domain: "www.alrz.mrbug.ir:443",
@@ -33,6 +36,7 @@ export const assets: AssetType[] = [
     updateDate: new Date("2025-03-26T03:24:00"),
     createdDate: new Date("2025-03-26T03:24:00"),
     status: 404,
+    technologies: ["Node.js", "Express", "MongoDB"],
   },
   {
     domain: "webdisk.mrbug.ir:443",
@@ -41,18 +45,21 @@ export const assets: AssetType[] = [
     createdDate: new Date("2025-03-12T03:24:00"),
     cname: "disk.mrbug.ir",
     status: 404,
+    technologies: ["cPanel", "WebDAV"],
   },
   {
     domain: "mrbug.ir movazee.com",
     createdDate: new Date("2025-04-12T03:24:00"),
     status: 200,
     ipAddresses: ["185.143.234.120"],
+    technologies: ["WordPress", "PHP", "MySQL"],
   },
   {
     domain: "mrbug.ir",
     updateDate: new Date("2025-06-11T03:24:00"),
     createdDate: new Date("2025-06-11T03:24:00"),
     status: 500,
+    technologies: ["React", "Node.js", "PostgreSQL"],
   },
   {
     domain: "mrbug.ir",
@@ -62,6 +69,7 @@ export const assets: AssetType[] = [
     domain: "mrbug.ir",
     updateDate: new Date("2025-06-11T03:24:00"),
     createdDate: new Date("2025-06-11T03:24:00"),
+    technologies: ["Next.js", "Vercel"],
   },
   {
     domain: "mrbug.ir",

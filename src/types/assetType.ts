@@ -7,4 +7,5 @@ export type AssetType = {
   updateDate?: Date;
   createdDate?: Date;
   cname?: string;
+  technologies?: string[];
 };
