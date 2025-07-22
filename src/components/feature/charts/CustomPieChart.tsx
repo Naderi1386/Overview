@@ -12,12 +12,14 @@ const CustomPieChart = ({
   title,
   tooltipContentStyles,
   tooltipItemStyles,
+  handleNavigate,
 }: {
   chartData: { label: string; value: number }[];
   colors: string[];
   title: string;
   tooltipContentStyles: CSSProperties;
   tooltipItemStyles: CSSProperties;
+  handleNavigate?: (name: string) => void;
 }) => {
   return (
     <div className="w-[30%] h-64 flex flex-col items-center justify-center">
@@ -34,11 +36,17 @@ const CustomPieChart = ({
             innerRadius={55}
             dataKey="value"
             nameKey="label"
-            label={({ percent, name }) => 
+            label={({ percent, name }) =>
               `${name}: ${(Number(percent) * 100).toFixed(0)}%`
             }
             isAnimationActive={true}
             paddingAngle={5}
+            className={`${handleNavigate && "cursor-pointer"}`}
+            onClick={(data) => {
+              if (!chartData.length) return;
+              if (data?.label && typeof handleNavigate === "function")
+                handleNavigate(data.label);
+            }}
           >
             {chartData.map((_, index) => (
               <Cell
@@ -46,6 +54,7 @@ const CustomPieChart = ({
                 fill={colors[index]}
                 stroke="#1f2937"
                 strokeWidth={1}
+                tabIndex={-1}
               />
             ))}
           </Pie>

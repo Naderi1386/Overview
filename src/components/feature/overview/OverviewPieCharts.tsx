@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { CHART_COLORS } from "../../../constants/chartColors";
 import type { AssetType } from "../../../types/assetType";
 import {
@@ -19,9 +20,10 @@ const OverviewPieCharts = ({ assets }: { assets: AssetType[] }) => {
   const chartUpdateDateData = getAssetsWithAndWithoutUpdateDate(assets);
   const chartItems = [
     {
-      title: "بررسی وجود آی دی در دارایی ها",
+      title: "بررسی وجود آی پی در دارایی ها",
       colors: [CHART_COLORS.yellow, CHART_COLORS.lightBlue],
       chartData: chartIPData,
+      filterBaseURL: "/assets?filterBy=",
     },
     {
       title: "تفکیک وضعیت پاسخ",
@@ -33,18 +35,21 @@ const OverviewPieCharts = ({ assets }: { assets: AssetType[] }) => {
         CHART_COLORS.orange,
       ],
       chartData: chartStatusData,
+      filterBaseURL: "/assets?filterBy=status&value=",
     },
     {
       title: "پوشش به‌روزرسانی دارایی‌ها",
       colors: [CHART_COLORS.lightBlue, CHART_COLORS.yellow],
       chartData: chartUpdateDateData,
+      filterBaseURL: "/assets?filterBy=",
     },
   ];
-
+  const navigate = useNavigate();
   return (
     <ChartWrraper>
       {chartItems.map((item, index) => (
         <CustomPieChart
+          handleNavigate={(name) => navigate(`${item.filterBaseURL}${name}`)}
           tooltipContentStyles={{
             backgroundColor: "white",
             borderColor: CHART_COLORS.darkBlue,

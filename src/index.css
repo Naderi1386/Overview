@@ -53,3 +53,8 @@
     color: oklch(71% 0.194 13.428);
   }
 }
+
+
+.recharts-pie path:focus {
+  outline: none;
+}
