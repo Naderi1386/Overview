@@ -34,7 +34,7 @@ const CustomPieChart = ({
             innerRadius={55}
             dataKey="value"
             nameKey="label"
-            label={({ name, percent }) =>
+            label={({ percent, name }) => 
               `${name}: ${(Number(percent) * 100).toFixed(0)}%`
             }
             isAnimationActive={true}

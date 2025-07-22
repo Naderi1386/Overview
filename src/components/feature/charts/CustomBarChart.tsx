@@ -36,9 +36,12 @@ const CustomBarChart = ({
           <XAxis dataKey="label" stroke="white" />
           <YAxis stroke="white" />
           <Tooltip
-            contentStyle={tooltipContentStyles}
-            labelStyle={{ color: "white" }}
-            itemStyle={tooltipItemStyles}
+            content={({ label, payload }) => (
+              <div style={tooltipContentStyles}>
+                <span style={{ color: barFill, fontSize: 14 }}>{label}:</span>
+                <span style={tooltipItemStyles}> {payload[0]?.value}</span>
+              </div>
+            )}
           />
           <Bar dataKey="value" fill={barFill} />
         </BarChart>

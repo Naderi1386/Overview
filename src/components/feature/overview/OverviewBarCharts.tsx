@@ -41,12 +41,15 @@ const OverviewBarCharts = ({ assets }: { assets: AssetType[] }) => {
         <CustomBarChart
           key={index}
           tooltipContentStyles={{
-            backgroundColor: CHART_COLORS.darkBlue,
+            backgroundColor: "white",
             borderRadius: "2px",
             color: "white",
+            borderColor: item.barFill,
+            padding:10,
+            borderWidth:2
           }}
           tooltipItemStyles={{
-            color: "white",
+            color: item.barFill,
             fontWeight: "bold",
             fontSize: 14,
           }}

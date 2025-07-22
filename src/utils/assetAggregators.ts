@@ -125,7 +125,7 @@ export const getTechnologiesOfAssets = (
       } else otherCount++;
     });
   });
-  if (otherCount > 0) groupedTechnologies["others"] = otherCount;
+  if (otherCount > 0) groupedTechnologies["Other"] = otherCount;
   return Object.entries(groupedTechnologies).map((item) => ({
     label: item[0],
     value: item[1],
