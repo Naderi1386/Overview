@@ -1,4 +1,5 @@
 import type { AssetType } from "../../../types/assetType";
+import { motion } from "framer-motion";
 import {
   getAssetsWithCNAME,
   getAssetsWithIP,
@@ -10,7 +11,15 @@ import OverviewCard from "./OverviewCard";
 
 const OverviewCards = ({ assets }: { assets: AssetType[] }) => {
   return (
-    <div className="flex items-center justify-around flex-wrap gap-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-2.5 shadow-lg">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.25, ease: "backIn" }}
+      whileHover={{
+        boxShadow: "0 0 20px rgba(255,255,255,0.15)",
+      }}
+      className="flex items-center justify-around flex-wrap gap-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-2.5 shadow-lg"
+    >
       <OverviewCard label="مجموع دارایی‌ها" value={String(assets.length)} />
       <OverviewCard label="دامنه‌های یکتا" value={getUniqueDomains(assets)} />
       <OverviewCard label="پورت‌ها" value={getTotalPorts(assets)} />
@@ -23,7 +32,7 @@ const OverviewCards = ({ assets }: { assets: AssetType[] }) => {
         label="پرکاربردترین فناوری"
         value={getMostUsedTechnology(assets)}
       />
-    </div>
+    </motion.div>
   );
 };
 
