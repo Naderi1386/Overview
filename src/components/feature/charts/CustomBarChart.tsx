@@ -56,6 +56,7 @@ const CustomBarChart = ({
                 handleNavigate(String(label));
               }
             }}
+            tabIndex={-1}
           />
         </BarChart>
       </ResponsiveContainer>

@@ -57,3 +57,6 @@
 .recharts-pie path:focus {
   outline: none;
 }
+.recharts-bar path:focus {
+  outline: none;
+}
