@@ -19,15 +19,17 @@ const CustomContentTreemap = ({
   return (
     <g>
       <rect
+        strokeWidth={0.5}
+        fillOpacity={0.8}
         x={x}
         y={y}
         width={width}
         height={height}
         style={{
           fill: fill,
-          stroke: "whitesmoke",
-          strokeWidth: 2 / (depth + 1e-10),
-          strokeOpacity: 1 / (depth + 1e-10),
+          stroke: "white",
+          strokeWidth: 2,
+          strokeOpacity: 0.3,
         }}
       />
       {depth === 1 ? (
@@ -37,8 +39,9 @@ const CustomContentTreemap = ({
             y={y + height / 2 - 7}
             textAnchor="middle"
             fill="#000"
-            fontSize={14}
+            fontSize={12}
             dominantBaseline="central"
+            opacity={0.8}
           >
             {label}
           </text>
@@ -49,6 +52,7 @@ const CustomContentTreemap = ({
             fill="#555"
             fontSize={11}
             dominantBaseline="central"
+            opacity={0.8}
           >
             {contentLabel}: {value}
           </text>
