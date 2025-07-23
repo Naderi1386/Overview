@@ -7,7 +7,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import type { CSSProperties } from "react";
+import type { CustomAreaChartProps } from "../../../types/CustomChartsProps";
 
 const CustomAreaChart = ({
   title,
@@ -15,13 +15,7 @@ const CustomAreaChart = ({
   colors,
   tooltipContentStyles,
   tooltipItemStyles,
-}: {
-  title: string;
-  chartData: { label: string; value: number }[];
-  colors: string[];
-  tooltipContentStyles: CSSProperties;
-  tooltipItemStyles: CSSProperties;
-}) => {
+}: CustomAreaChartProps) => {
   return (
     <div className="w-[45%] h-72">
       <h3 className="text-white text-base font-semibold mb-2.5 text-center">

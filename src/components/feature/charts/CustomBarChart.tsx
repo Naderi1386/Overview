@@ -7,7 +7,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import type { CSSProperties } from "react";
+import type { CustomBarChartProps } from "../../../types/CustomChartsProps";
 
 const CustomBarChart = ({
   chartData,
@@ -16,14 +16,7 @@ const CustomBarChart = ({
   tooltipContentStyles,
   tooltipItemStyles,
   handleNavigate,
-}: {
-  chartData: { label: string; value: number }[];
-  title: string;
-  barFill: string;
-  tooltipContentStyles: CSSProperties;
-  tooltipItemStyles: CSSProperties;
-  handleNavigate?: (name: string) => void;
-}) => {
+}: CustomBarChartProps) => {
   return (
     <div className="w-[45%] h-72">
       <h3 className="text-white text-base font-semibold mb-2.5 text-center">
@@ -31,11 +24,7 @@ const CustomBarChart = ({
       </h3>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart data={chartData}>
-          <CartesianGrid
-            strokeDasharray="3 3"
-            stroke="white"
-            opacity={0.1} 
-          />
+          <CartesianGrid strokeDasharray="3 3" stroke="white" opacity={0.1} />
           <XAxis
             dataKey="label"
             axisLine={false}

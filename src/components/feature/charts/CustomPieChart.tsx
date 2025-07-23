@@ -5,7 +5,7 @@ import {
   Cell,
   ResponsiveContainer,
 } from "recharts";
-import type { CSSProperties } from "react";
+import type {  CustomPieChartProps } from "../../../types/CustomChartsProps";
 const CustomPieChart = ({
   chartData,
   colors,
@@ -13,14 +13,7 @@ const CustomPieChart = ({
   tooltipContentStyles,
   tooltipItemStyles,
   handleNavigate,
-}: {
-  chartData: { label: string; value: number }[];
-  colors: string[];
-  title: string;
-  tooltipContentStyles: CSSProperties;
-  tooltipItemStyles: CSSProperties;
-  handleNavigate?: (name: string) => void;
-}) => {
+}: CustomPieChartProps) => {
   return (
     <div className="w-[30%] h-64 flex flex-col items-center justify-center">
       <h3 className="text-white text-base font-semibold mb-2.5 text-center">
