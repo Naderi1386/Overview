@@ -10,6 +10,7 @@ module.exports = {
       },
       colors: {
         primary: "oklch(58% 0.233 277.117)",
+      
       },
     },
   },
