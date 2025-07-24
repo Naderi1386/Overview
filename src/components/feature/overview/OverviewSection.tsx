@@ -22,7 +22,7 @@ const OverviewSection = () => {
     area: <OverviewAreaCharts assets={assets} />,
   };
   return (
-    <motion.div
+    <motion.section
       initial={{ opacity: 0, y: -80 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ type: "spring", stiffness: 150, duration: 0.5 }}
@@ -47,7 +47,7 @@ const OverviewSection = () => {
           </motion.div>
         </AnimatePresence>
       </div>
-    </motion.div>
+    </motion.section>
   );
 };
 

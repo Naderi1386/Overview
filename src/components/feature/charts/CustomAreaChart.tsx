@@ -8,6 +8,7 @@ import {
   YAxis,
 } from "recharts";
 import type { CustomAreaChartProps } from "../../../types/CustomChartsProps";
+import CustomTooltipContent from "./CustomTooltipContent";
 
 const CustomAreaChart = ({
   title,
@@ -52,14 +53,12 @@ const CustomAreaChart = ({
             labelStyle={{ color: "white" }}
             itemStyle={tooltipItemStyles}
             content={({ label, payload }) => (
-              <div style={tooltipContentStyles}>
-                <span
-                  style={{ color: "black", fontSize: 14, fontWeight: "bold" }}
-                >
-                  {label}:
-                </span>
-                <span style={tooltipItemStyles}> {payload[0]?.value}</span>
-              </div>
+              <CustomTooltipContent
+                tooltipContentStyles={tooltipContentStyles}
+                tooltipItemStyles={tooltipItemStyles}
+                label={label as string}
+                value={payload?.[0]?.value}
+              />
             )}
           />
           <Area
