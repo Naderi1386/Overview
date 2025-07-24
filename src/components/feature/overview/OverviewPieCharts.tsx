@@ -9,6 +9,7 @@ import {
 import ChartWrraper from "../charts/ChartWrraper";
 import CustomPieChart from "../charts/CustomPieChart";
 const OverviewPieCharts = ({ assets }: { assets: AssetType[] }) => {
+  const navigate = useNavigate();
   const chartIPData = getAssetsWithAndWithoutIP(assets);
   const chartStatusData = getAssetsByStatus(assets, [
     "200",
@@ -44,7 +45,6 @@ const OverviewPieCharts = ({ assets }: { assets: AssetType[] }) => {
       filterBaseURL: "/assets?filterBy=",
     },
   ];
-  const navigate = useNavigate();
   return (
     <ChartWrraper>
       {chartItems.map((item, index) => (
