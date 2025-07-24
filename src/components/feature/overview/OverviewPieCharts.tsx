@@ -28,10 +28,10 @@ const OverviewPieCharts = ({ assets }: { assets: AssetType[] }) => {
     {
       title: "تفکیک وضعیت پاسخ",
       colors: [
+        CHART_COLORS.lightBlue,
+        CHART_COLORS.purple,
         CHART_COLORS.cyan,
         CHART_COLORS.yellow,
-        CHART_COLORS.purple,
-        CHART_COLORS.lightBlue,
         CHART_COLORS.orange,
       ],
       chartData: chartStatusData,
