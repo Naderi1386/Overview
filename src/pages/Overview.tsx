@@ -22,7 +22,7 @@ const Overview = () => {
   };
   return (
     <section className="px-20 pb-32 pt-10 relative">
-      <div className="absolute inset-0 m-auto w-[50rem] h-[35rem] rounded-[100%] bg-white/5 blur-3xl"></div>
+      {/* <div className="absolute inset-0 m-auto w-[50rem] h-[35rem] rounded-[100%] bg-white/5 blur-3xl"></div> */}
       <motion.div
         initial={{ opacity: 0, y: -80 }}
         animate={{ opacity: 1, y: 0 }}

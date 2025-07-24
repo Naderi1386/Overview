@@ -18,7 +18,7 @@ const OverviewCards = ({ assets }: { assets: AssetType[] }) => {
       whileHover={{
         boxShadow: "0 0 20px rgba(255,255,255,0.15)",
       }}
-      className="flex items-center justify-around flex-wrap gap-4 backdrop-blur-md border border-white/10 rounded-2xl p-3 shadow-lg"
+      className="flex items-center justify-around flex-wrap gap-4 backdrop-blur-md border-2 border-white/10 rounded-xl p-3 shadow-lg"
     >
       <OverviewCard label="مجموع دارایی‌ها" value={String(assets.length)} />
       <OverviewCard label="دامنه‌های یکتا" value={getUniqueDomains(assets)} />
