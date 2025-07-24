@@ -24,6 +24,7 @@ const CustomTreeMap = ({
       </h3>
       <ResponsiveContainer width="100%" height="100%">
         <Treemap
+        
           data={chartData}
           dataKey="value"
           nameKey="label"

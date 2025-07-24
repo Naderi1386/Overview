@@ -67,6 +67,7 @@ const CustomAreaChart = ({
             dataKey="value"
             stroke={colors[0]}
             fill={colors[1]}
+            strokeWidth={3}
           />
         </AreaChart>
       </ResponsiveContainer>
