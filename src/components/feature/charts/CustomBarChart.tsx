@@ -70,8 +70,6 @@ const CustomBarChart = ({
               }
             }}
             tabIndex={-1}
-            strokeWidth={0.8}
-            stroke="white"
             radius={[8, 8, 0, 0]}
           />
         </BarChart>
