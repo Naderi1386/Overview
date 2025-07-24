@@ -8,6 +8,9 @@ module.exports = {
       fontFamily: {
         vazir: ["Vazirmatn", "sans-serif"],
       },
+      colors: {
+        primary: "oklch(58% 0.233 277.117)",
+      },
     },
   },
   plugins: [daisyui],

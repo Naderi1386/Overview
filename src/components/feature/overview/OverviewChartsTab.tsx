@@ -25,7 +25,6 @@ const chartItems = [
   },
 ];
 
-
 const OverviewChartsTab = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const chartType = searchParams.get("chartType") || "pie";
