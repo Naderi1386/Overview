@@ -32,14 +32,14 @@ const CustomContentTreemap = ({
           strokeOpacity: 0.3,
         }}
       />
-      {depth === 1 ? (
+      {depth === 1 && width > 80 && height > 30 ? (
         <>
           <text
             x={x + width / 2}
             y={y + height / 2 - 6}
             textAnchor="middle"
             fill="#000"
-            fontSize={10} 
+            fontSize={10}
             dominantBaseline="central"
             opacity={0.8}
           >
@@ -50,7 +50,7 @@ const CustomContentTreemap = ({
             y={y + height / 2 + 7}
             textAnchor="middle"
             fill="#555"
-            fontSize={9} 
+            fontSize={9}
             dominantBaseline="central"
             opacity={0.8}
           >
