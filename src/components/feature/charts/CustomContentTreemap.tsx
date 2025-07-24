@@ -36,10 +36,10 @@ const CustomContentTreemap = ({
         <>
           <text
             x={x + width / 2}
-            y={y + height / 2 - 7}
+            y={y + height / 2 - 6}
             textAnchor="middle"
             fill="#000"
-            fontSize={12}
+            fontSize={10} 
             dominantBaseline="central"
             opacity={0.8}
           >
@@ -47,10 +47,10 @@ const CustomContentTreemap = ({
           </text>
           <text
             x={x + width / 2}
-            y={y + height / 2 + 9}
+            y={y + height / 2 + 7}
             textAnchor="middle"
             fill="#555"
-            fontSize={11}
+            fontSize={9} 
             dominantBaseline="central"
             opacity={0.8}
           >
