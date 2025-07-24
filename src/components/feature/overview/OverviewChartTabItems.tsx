@@ -20,7 +20,7 @@ const OverviewChartTabItems = ({
       onClick={handleClick}
       key={item.key}
       className={`tab flex items-center gap-3 ${
-        isActive && "bg-primary-20 !rounded-xl !text-white"
+        isActive ? "bg-primary-20 !rounded-xl !text-white" : "text-white/60"
       }`}
     >
       <span className="font-bold">{item.label}</span>
