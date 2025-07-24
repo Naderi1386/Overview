@@ -41,6 +41,7 @@ const OverviewAreaCharts = ({ assets }: { assets: AssetType[] }) => {
           title={item.title}
           chartData={item.chartData}
           colors={item.colors}
+          interval={Math.floor(assets.length / 20)}
         />
       ))}
     </ChartWrraper>

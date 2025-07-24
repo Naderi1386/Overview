@@ -15,6 +15,7 @@ const CustomAreaChart = ({
   colors,
   tooltipContentStyles,
   tooltipItemStyles,
+  interval
 }: CustomAreaChartProps) => {
   return (
     <div className="w-[45%] h-72">
@@ -34,6 +35,7 @@ const CustomAreaChart = ({
               fontSize: 14,
               fontWeight: 400,
             }}
+            interval={interval}
           />
           <YAxis
             axisLine={false}

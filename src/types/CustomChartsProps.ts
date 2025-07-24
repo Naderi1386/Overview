@@ -32,4 +32,5 @@ export type CustomAreaChartProps = {
   colors: string[];
   tooltipContentStyles: CSSProperties;
   tooltipItemStyles: CSSProperties;
+  interval?: number;
 };
